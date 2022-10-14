@@ -1,0 +1,11 @@
+@import '../../partials/config';
+
+.login-wrapper {
+    max-width: $max-width;
+    padding: 10rem 2rem 0 2rem;
+    margin: 0 auto;
+
+    .title {
+        font-weight: bold;
+    }
+}

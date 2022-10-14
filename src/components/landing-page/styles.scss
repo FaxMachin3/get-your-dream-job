@@ -1,0 +1,40 @@
+.landing {
+    height: 100vh;
+    background: url(../../assests/landing-cover-small.jpg) no-repeat center
+        center/cover;
+
+    .dark-overlay {
+        color: #fff;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .landing-content {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            > h1 {
+                color: inherit;
+                line-height: 1.2;
+                margin-bottom: 2rem;
+                font-size: 6rem;
+            }
+
+            > .sub-title {
+                color: inherit;
+                font-size: 2rem;
+            }
+
+            .recruiter-sign-up-btn {
+                margin-right: 4rem;
+            }
+        }
+    }
+}

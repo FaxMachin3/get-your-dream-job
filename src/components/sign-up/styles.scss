@@ -1,0 +1,16 @@
+@import '../../partials/config';
+
+.sign-up {
+    max-width: $max-width;
+    padding: 10rem 2rem 0 2rem;
+    margin: 0 auto;
+
+    .title {
+        font-weight: bold;
+    }
+
+    .sign-up-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}
