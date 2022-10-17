@@ -9,6 +9,7 @@ import { ROUTES } from '../constants';
 const Login = lazy(() => import('../components/login'));
 const SignUp = lazy(() => import('../components/sign-up'));
 const JobListing = lazy(() => import('../components/job-listing'));
+const Profile = lazy(() => import('../components/profile'));
 
 export const router = createBrowserRouter([
     {
@@ -45,6 +46,14 @@ export const router = createBrowserRouter([
                 element: (
                     <Suspense fallback={<Loader />}>
                         <JobListing />
+                    </Suspense>
+                ),
+            },
+            {
+                path: ROUTES.PROFILE,
+                element: (
+                    <Suspense fallback={<Loader />}>
+                        <Profile />
                     </Suspense>
                 ),
             },

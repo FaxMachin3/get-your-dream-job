@@ -3,7 +3,17 @@ $dark-color: #1f1f1f;
 $light-color: #f4f4f4;
 $danger-color: #dc3545;
 $success-color: #28a745;
-$max-width: 1100px;
+$navbar-height: 62px;
+$max-page-width: 1100px;
+$max-form-width: 400px;
+$sidebar-width: 300px;
+$button-radius: 5px;
+$min-listing-height: 1200px;
+$media-mobile-width: 480px;
+$media-tablet-width: 768px;
+$form-box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+$card-box-shadow: 1px 2px 10px rgb(0 0 0 / 0.1);
+$nav-box-shadow: 0 0 13px 7px rgb(0 0 0 / 0.2);
 
 // Set text color based on background
 @function set-text-color($color) {

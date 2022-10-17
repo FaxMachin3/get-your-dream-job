@@ -1,0 +1,11 @@
+@import '../../partials/config';
+
+.job-listing-wrapper {
+    display: flex;
+    min-height: $min-listing-height;
+
+    .no-jobs {
+        flex-grow: 1;
+        text-align: center;
+    }
+}

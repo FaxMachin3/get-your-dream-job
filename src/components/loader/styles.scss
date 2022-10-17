@@ -1,5 +1,8 @@
-.loader-wrapper{
-    height: 100%;
+@import '../../partials/config';
+
+.loader-wrapper {
+    width: 100%;
+    height: calc(100% - $navbar-height);
     display: grid;
     place-content: center;
 }

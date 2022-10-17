@@ -1,11 +1,26 @@
 @import '../../partials/config';
 
 .login-wrapper {
-    max-width: $max-width;
-    padding: 10rem 2rem 0 2rem;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 
-    .title {
-        font-weight: bold;
+    .login-content {
+        flex-grow: 1;
+        margin: 3rem;
+        max-width: $max-form-width;
+        padding: 4rem;
+        border-radius: 1rem;
+        box-shadow: $form-box-shadow;
+
+        .title {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        input,
+        button,
+        .password-input {
+            border-radius: $button-radius;
+        }
     }
 }

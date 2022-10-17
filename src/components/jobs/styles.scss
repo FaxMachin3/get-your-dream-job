@@ -1,0 +1,56 @@
+@import '../../partials/config';
+
+.job-listing {
+    flex-grow: 1;
+
+    .job-card {
+        margin-bottom: 2rem;
+        border-radius: 1rem;
+
+        > :first-child {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+
+            &.content-candidate {
+                margin-right: 2rem;
+                padding-right: 1rem;
+                border-right: 1px solid #f0f0f0;
+            }
+
+            .logo {
+                margin: auto 0;
+                &-image {
+                    display: grid;
+                    place-content: center;
+                }
+            }
+
+            .job-details {
+                margin-left: 2rem;
+
+                .title {
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+
+                    .applicants {
+                        font-size: 0.9rem;
+                        margin-left: 1rem;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+
+        .action-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}

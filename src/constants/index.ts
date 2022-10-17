@@ -4,4 +4,32 @@ export const ROUTES = {
     RECRUITER_SIGN_UP: '/recruiter/sign-up',
     CANDIDATE_SIGN_UP: '/candidate/sign-up',
     JOB_LISTING: '/job-listing',
+    PROFILE: '/profile',
 };
+
+export enum USER_TYPE {
+    CANDIDATE = 'CANDIDATE',
+    RECRUITER = 'RECRUITER',
+}
+
+export const LOCAL_STORAGE = {
+    CURRENT_USER: 'currentUser',
+    _USERS: '_USERS',
+    _JOBS: '_JOBS',
+};
+
+export type FilterType = {
+    tags: Array<string>;
+    minSalary: string;
+};
+
+export const tagsOptions = [
+    'CSS',
+    'HTML',
+    'Javascript',
+    'React.js',
+    'Typescript',
+    'Next.js',
+    'Ruby',
+    'Dart',
+];

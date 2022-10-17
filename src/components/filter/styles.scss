@@ -1,0 +1,21 @@
+@import '../../partials/config';
+
+.search-input {
+    margin-bottom: 2rem;
+
+    > div {
+        border-radius: $button-radius !important;
+    }
+
+    .search-icon {
+        opacity: 0.2;
+    }
+}
+
+.filter-title {
+    font-size: 2rem;
+}
+
+.min-salary-input {
+    border-radius: $button-radius;
+}

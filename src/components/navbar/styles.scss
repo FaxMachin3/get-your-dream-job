@@ -1,14 +1,11 @@
+@import '../../partials/config';
+
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 99999;
-    padding: 1.75rem 3rem;
+    height: $navbar-height;
+    padding: 1.75rem 0;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 0 13px 7px rgb(0 0 0 / 4%);
-    color: white;
+    align-items: center;
 
     a {
         color: inherit;
@@ -18,7 +15,7 @@
         font-weight: bold;
     }
 
-    .links > a {
+    .links > a:not(:last-child) {
         margin-right: 1.6rem;
     }
 }

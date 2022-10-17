@@ -1,16 +1,24 @@
-import React from 'react';
-import './styles.scss';
-
-import { Button, Typography } from 'antd';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Button, Typography, Image } from 'antd';
+import { Link, Navigate } from 'react-router-dom';
 import { ROUTES } from '../../constants';
+import { UserContext } from '../../contexts/UserContext';
+import backdrop from '../../assests/job-offer.svg';
+
+import './styles.scss';
 
 interface LandingPageProps {}
 
 const LandingPage: React.FC<LandingPageProps> = () => {
+    const { currentUser } = useContext(UserContext);
+
+    if (currentUser) {
+        return <Navigate to={ROUTES.JOB_LISTING} />;
+    }
+
     return (
         <section className="landing">
-            <div className="dark-overlay">
+            <div className="landing-text">
                 <div className="landing-content">
                     <Typography.Title>
                         Join us to get your dream job now!
@@ -22,19 +30,27 @@ const LandingPage: React.FC<LandingPageProps> = () => {
                     <div>
                         <Button
                             type="default"
-                            className="recruiter-sign-up-btn"
+                            className="sign-up-btn"
+                            size="large"
                         >
                             <Link to={ROUTES.RECRUITER_SIGN_UP}>
                                 Recruiter sign-up
                             </Link>
                         </Button>
-                        <Button type="primary">
+                        <Button
+                            type="primary"
+                            className="sign-up-btn"
+                            size="large"
+                        >
                             <Link to={ROUTES.CANDIDATE_SIGN_UP}>
                                 Candidate sign-up
                             </Link>
                         </Button>
                     </div>
                 </div>
+            </div>
+            <div className="backdrop">
+                <Image src={backdrop} preview={false} alt="backdrop" />
             </div>
         </section>
     );
