@@ -9,6 +9,8 @@ const users: User[] = [
         password: '123456',
         userDetails: {
             type: USER_TYPE.CANDIDATE,
+            contact: '8160602123',
+            location: 'Bengaluru',
             githubUsername: 'faxmachin3',
             skills: ['JAVA', 'HTML'],
             appliedTo: ['J-10001'],
@@ -22,6 +24,8 @@ const users: User[] = [
         password: '123456',
         userDetails: {
             type: USER_TYPE.CANDIDATE,
+            contact: '9160602123',
+            location: 'Bengaluru',
             githubUsername: '',
             skills: ['JAVA', 'Angular.js', 'UI'],
             appliedTo: ['J-10001'],
@@ -35,6 +39,8 @@ const users: User[] = [
         password: '123456',
         userDetails: {
             type: USER_TYPE.CANDIDATE,
+            contact: '7260602123',
+            location: 'Bengaluru',
             githubUsername: '',
             skills: ['Javascript'],
             appliedTo: ['J-10001', 'J-10002'],
@@ -48,6 +54,8 @@ const users: User[] = [
         password: '123456',
         userDetails: {
             type: USER_TYPE.RECRUITER,
+            contact: '9360602123',
+            location: 'Bengaluru',
             companyName: 'Intuit',
         },
     },
@@ -58,6 +66,8 @@ const users: User[] = [
         password: '123456',
         userDetails: {
             type: USER_TYPE.RECRUITER,
+            contact: 'janedoe@gmail.com',
+            location: 'Bengaluru',
             companyName: 'Bolt',
         },
     },
@@ -68,6 +78,8 @@ const users: User[] = [
         password: '123456',
         userDetails: {
             type: USER_TYPE.RECRUITER,
+            contact: '4660602123',
+            location: 'Bengaluru',
             companyName: 'Rippling',
         },
     },

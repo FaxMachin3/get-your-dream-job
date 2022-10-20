@@ -1,0 +1,32 @@
+@import '../../partials/config';
+
+.create-job-wrapper {
+    .title {
+        text-align: center;
+    }
+
+    // input,
+    // textarea,
+    // button,
+    // .password-input {
+    //     border-radius: $button-radius;
+    // }
+
+    .description-input {
+        label {
+            width: 100%;
+        }
+
+        .description-label {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .limit {
+                font-size: 0.8rem;
+                align-self: flex-end;
+                color: $light-color-2;
+            }
+        }
+    }
+}

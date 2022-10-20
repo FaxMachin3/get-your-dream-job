@@ -27,7 +27,7 @@ const LandingPage: React.FC<LandingPageProps> = () => {
                         The voyage of discovery is not in looking for new
                         landscapes, but in looking with new eyes.
                     </Typography.Paragraph>
-                    <div>
+                    <div className="button-container">
                         <Button
                             type="default"
                             className="sign-up-btn"

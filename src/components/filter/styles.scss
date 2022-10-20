@@ -1,11 +1,32 @@
 @import '../../partials/config';
 
-.search-input {
+// .filter-container {
+//     border-radius: $button-radius;
+
+//     input {
+//         border-radius: $button-radius;
+//     }
+// }
+
+.create-job-modal {
+    top: 40px;
+
+    // button {
+    //     border-radius: $button-radius;
+    // }
+}
+
+.create-job {
     margin-bottom: 2rem;
 
-    > div {
-        border-radius: $button-radius !important;
+    > button {
+        // border-radius: $button-radius;
+        width: 100%;
     }
+}
+
+.search-input {
+    margin-bottom: 2rem;
 
     .search-icon {
         opacity: 0.2;
@@ -16,6 +37,9 @@
     font-size: 2rem;
 }
 
-.min-salary-input {
-    border-radius: $button-radius;
+@media screen and (max-width: $media-mobile-width) {
+    .create-job-modal {
+        top: 10px;
+        width: 90% !important;
+    }
 }

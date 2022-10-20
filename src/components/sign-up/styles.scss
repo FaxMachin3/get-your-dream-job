@@ -17,10 +17,19 @@
             text-align: center;
         }
 
-        input,
-        button,
-        .password-input {
-            border-radius: $button-radius;
+        // input,
+        // button,
+        // .password-input {
+        //     border-radius: $button-radius;
+        // }
+    }
+}
+
+@media screen and (max-width: $media-mobile-width) {
+    .sign-up-wrapper {
+        .sign-up-content {
+            margin: 1rem;
+            padding: 3rem;
         }
     }
 }

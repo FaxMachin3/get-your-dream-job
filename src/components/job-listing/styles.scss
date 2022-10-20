@@ -8,4 +8,50 @@
         flex-grow: 1;
         text-align: center;
     }
+
+    .jobs-wrapper {
+        .pagination-container {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: $media-tablet-width) {
+    .job-listing-wrapper {
+        flex-direction: column;
+
+        .sidebar {
+            width: initial;
+            margin: inherit;
+            margin-bottom: 2rem;
+        }
+
+        .jobs-wrapper {
+            .job-card {
+                > div {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .content {
+                    text-align: center;
+                    border: initial;
+                    margin: initial;
+                    padding: initial;
+
+                    .title {
+                        display: initial;
+                    }
+
+                    // Todo: think were to place
+                    .tags,
+                    .applicants {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }

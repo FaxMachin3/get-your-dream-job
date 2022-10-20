@@ -73,7 +73,7 @@ const SignUp: React.FC<SignUpProps> = () => {
                 name,
                 email,
                 password,
-                userDetails: { ...getUserDetails() },
+                userDetails: { ...getUserDetails(), location: '' },
             };
 
             createUser(payload)

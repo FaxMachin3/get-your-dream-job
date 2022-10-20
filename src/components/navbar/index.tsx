@@ -39,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     };
 
     return (
-        <nav className={`navbar ${isRoot ? 'white-text' : ''}`}>
+        <nav id="navbar" className={`navbar ${isRoot ? 'white-text' : ''}`}>
             <div className="logo">
                 <Link to="/">GYDJ</Link>
             </div>

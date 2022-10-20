@@ -7,10 +7,18 @@
     &-text {
         margin: auto 1rem;
 
+        .landing.text {
+            height: 100%;
+        }
+
         .landing-content {
+            height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
             > h1 {
                 margin-bottom: 4rem;
-                font-size: 7rem;
+                font-size: 6rem;
             }
 
             > .sub-title {
@@ -22,9 +30,9 @@
                 margin-right: 4rem;
             }
 
-            .sign-up-btn {
-                border-radius: $button-radius;
-            }
+            // button {
+            //     border-radius: $button-radius;
+            // }
         }
     }
 
@@ -38,10 +46,10 @@
 @media screen and (max-width: $media-tablet-width) {
     .landing {
         flex-direction: column-reverse;
-        justify-content: space-around;
+        justify-content: space-evenly;
         &-text {
             margin: initial;
-            margin-bottom: 10rem;
+            margin-bottom: 5rem;
 
             .landing-content {
                 text-align: center;
@@ -55,6 +63,44 @@
                     font-size: 1.5rem;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: $media-mobile-width) {
+    .landing {
+        margin-top: 1.5rem;
+        // justify-content: initial;
+
+        &-text {
+            .landing-content {
+                > h1 {
+                    font-size: 3rem;
+                    margin-bottom: 3rem;
+                }
+
+                > .sub-title {
+                    margin-bottom: 2rem;
+                    font-size: 1.5rem;
+                }
+
+                .button-container {
+                    button {
+                        margin-top: 1rem;
+                        font-size: 1.3rem;
+                        // display: flex;
+                        flex-grow: 1;
+                        padding: 0rem 1rem;
+                    }
+                }
+            }
+        }
+
+        .backdrop {
+            margin: initial;
+            padding-top: 1rem;
+            width: calc(100vw - 4rem);
+            margin-bottom: 2rem;
         }
     }
 }

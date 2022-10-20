@@ -5,6 +5,8 @@ export const ROUTES = {
     CANDIDATE_SIGN_UP: '/candidate/sign-up',
     JOB_LISTING: '/job-listing',
     PROFILE: '/profile',
+    EDIT_PROFILE: '/edit-profile',
+    CREATE_JOB: '/create-job',
 };
 
 export enum USER_TYPE {
@@ -32,4 +34,23 @@ export const tagsOptions = [
     'Next.js',
     'Ruby',
     'Dart',
+    'MongoDB',
+    'Python',
+    'C++',
+    'C#',
+    'DSA',
+    'System Design',
+    'PHP',
+    'SQL',
+    'Node.js',
+    'Nuxt.js',
+    'C',
+    'JAVA',
+    'UI/UX',
+    'Figma',
+    'Adobe XD',
 ];
+
+export const _16KB = 16384;
+export const _PAGE_SIZE = 10;
+export const _TOTAL_JOBS = 150;

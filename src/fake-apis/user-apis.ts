@@ -13,6 +13,8 @@ export interface User {
     password: string;
     userDetails: {
         type: USER_TYPE;
+        contact?: string;
+        location: string;
         githubUsername?: string;
         skills?: Array<string>;
         appliedTo?: Array<string>;
@@ -35,6 +37,14 @@ export const createUser = async (payload: Partial<User>): Promise<any> => {
     await updateUsersLocalStore(usersData);
 
     return fakePromise(newUserData);
+};
+
+export const getAppliedUsers = (applicants: string[]): Promise<User[]> => {
+    const applicantsSet = new Set(applicants);
+    const { usersData } = getLocalStore();
+
+    const applicantsOfJob = usersData.filter(({ id }) => applicantsSet.has(id));
+    return fakePromise(applicantsOfJob) as Promise<User[]>;
 };
 
 export const getUser = async (
@@ -76,11 +86,19 @@ export const deleteUser = async (userId: string): Promise<any> => {
     return fakePromise();
 };
 
-export const getUserGitHubRepos = (username: string) => {
-    return (
-        username &&
-        fetch(
+export const getUserGitHubRepos = async (
+    username: string = ''
+): Promise<any> => {
+    try {
+        const res = await fetch(
             `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc`
-        ).then((res) => res.json())
-    );
+        );
+        const data = await res.json();
+        if (data.length === 0 || !!data.message) {
+            throw new Error(ERROR.INVALID_GITHUB);
+        }
+        return fakePromise(data);
+    } catch (error: any) {
+        return fakePromise(null, error.message);
+    }
 };

@@ -9,9 +9,11 @@ export interface Job {
     id: string;
     companyName: string;
     title: string;
+    contact: string;
     description: string;
+    requirement: string;
     location: string;
-    createdAt: string;
+    createdAt: Date;
     createdBy: string; // Todo: maps to user
     salaryRange: [number, number];
     tags: Array<string>;
@@ -36,9 +38,21 @@ const isFilterApplied = (
     return has;
 };
 
+export const getAppliedJobs = (appliedTo: string[]): Promise<Job[]> => {
+    const appliedSet = new Set(appliedTo);
+    const { jobsData } = getLocalStore();
+
+    const appliedJobs = jobsData.filter(({ id }) => appliedSet.has(id));
+    return fakePromise(appliedJobs) as Promise<Job[]>;
+};
+
 export const getJobs = async (
     userEmail: string = '',
-    jobFilter: FilterType
+    jobFilter: FilterType,
+    paginated: { pageSize: number; offset: number } = {
+        pageSize: 10,
+        offset: 0,
+    }
 ): Promise<any> => {
     const { jobsData, usersData } = getLocalStore();
     const user = usersData.find(({ email }) => email === userEmail);
@@ -63,26 +77,53 @@ export const getJobs = async (
         );
     }
 
-    return fakePromise(jobs);
+    const totalJobs = jobs.length;
+    // console.log({ totalJobs });
+    const start = paginated.offset * paginated.pageSize;
+    const slicedJobs = jobs.slice(start, start + paginated.pageSize);
+    // console.log({ slicedJobs });
+
+    return fakePromise({ jobs: slicedJobs, totalJobs });
 };
 
 export const getJob = async (jobId: string): Promise<any> => {
     return fakePromise();
 };
 
-export const createJob = async (jobId: string, payload: Job): Promise<any> => {
+export const createJob = async (payload: Partial<Job>): Promise<any> => {
+    const { jobsData } = getLocalStore();
+    const id = `J-${10000 + jobsData.length + 1}`;
+    const newJob: Job = {
+        ...payload,
+        id,
+        createdAt: new Date(),
+        applicants: [],
+    } as Job;
+
+    // jobsData.push(newJob);
+    jobsData.unshift(newJob); // O(n) operation
+
+    await updateJobsLocalStore(jobsData);
+
     return fakePromise();
 };
 
 export const updateJob = async (
     jobId: string,
-    userId: string
+    payload: Partial<Job>
 ): Promise<any> => {
     const { jobsData } = getLocalStore();
 
     for (const index in jobsData) {
         if (jobsData[index].id === jobId) {
-            jobsData[index].applicants.push(userId);
+            jobsData[index] = {
+                ...jobsData[index],
+                ...payload,
+                applicants: [
+                    ...jobsData[index].applicants,
+                    ...(payload.applicants as string[]),
+                ],
+            };
         }
     }
 

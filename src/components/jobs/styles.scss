@@ -32,16 +32,32 @@
 
             .job-details {
                 margin-left: 2rem;
+                flex-grow: 1;
 
                 .title {
                     font-weight: bold;
                     display: flex;
+                    justify-content: space-between;
                     align-items: center;
 
                     .applicants {
                         font-size: 0.9rem;
-                        margin-left: 1rem;
                         font-weight: normal;
+                    }
+                }
+
+                .contact {
+                    font-size: 0.8rem;
+                    color: $light-color-2;
+                }
+
+                .tags {
+                    max-width: 500px;
+                    > span {
+                        padding: 0 0.5rem;
+                        margin-right: 0.5rem;
+                        font-size: 0.8rem;
+                        color: $light-color-2;
                     }
                 }
             }
@@ -51,6 +67,52 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+    }
+}
+
+.applicants-modal {
+    // div,
+    // button {
+    //     border-radius: $button-radius;
+    // }
+    .ant-modal-close-x,
+    .applicantsOkButton {
+        display: none;
+    }
+}
+
+@media screen and (max-width: $media-tablet-width) {
+    .job-listing {
+        .job-card {
+            .content {
+                .job-details {
+                    .tags {
+                        max-width: 400px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $media-mobile-width) {
+    .job-listing {
+        .job-card {
+            .content {
+                flex-direction: column;
+
+                .logo {
+                    margin: 1rem auto;
+                }
+
+                .job-details {
+                    margin: 0;
+                    .tags {
+                        max-width: 225px;
+                    }
+                }
+            }
         }
     }
 }

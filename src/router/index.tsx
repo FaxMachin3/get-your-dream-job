@@ -10,6 +10,8 @@ const Login = lazy(() => import('../components/login'));
 const SignUp = lazy(() => import('../components/sign-up'));
 const JobListing = lazy(() => import('../components/job-listing'));
 const Profile = lazy(() => import('../components/profile'));
+const CreateJob = lazy(() => import('../components/create-job'));
+const EditProfile = lazy(() => import('../components/edit-profile'));
 
 export const router = createBrowserRouter([
     {

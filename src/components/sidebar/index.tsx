@@ -5,7 +5,7 @@ import Filter from '../filter';
 import './styles.scss';
 
 interface SidebarProps {
-    getJobsForUser: (jobFilter: FilterType) => void;
+    getJobsForUser: (jobFilter?: FilterType) => void;
 }
 
 const Sidebar: React.FC<SidebarProps> = (props) => {

@@ -22,7 +22,7 @@ export const UserContextProvider: React.FC<UserContextProviderProps> = ({
     const [currentUser, setCurrentUser] = useState<User | null>(
         JSON.parse(localStorage.getItem(LOCAL_STORAGE.CURRENT_USER) as any)
     );
-    console.log({ currentUser });
+    // console.log({ currentUser });
     const setCurrentUserAndLocalStorage = (user: User | null) => {
         localStorage.setItem(LOCAL_STORAGE.CURRENT_USER, JSON.stringify(user));
         setCurrentUser(user);

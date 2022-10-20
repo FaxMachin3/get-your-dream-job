@@ -1,5 +1,156 @@
-.no-repo {
-    font-style: italic;
-    font-size: 1rem;
-    color: grey;
+@import '../../partials/config';
+
+.edit-profile-modal {
+    top: 40px;
+
+    button {
+        // border-radius: $button-radius;
+    }
+}
+
+.profile-wrapper {
+    .profile-card {
+        margin-bottom: 2rem;
+        // border-radius: $button-radius;
+    }
+
+    .profile-details-top {
+        position: relative;
+        background-color: $light-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .title {
+            margin-bottom: 1.4rem;
+        }
+
+        .avatar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.4rem;
+
+            .avatar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100px;
+                width: 100px;
+
+                span {
+                    font-size: 4rem;
+                }
+            }
+        }
+
+        .edit-profile {
+            margin: 1rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .applied-jobs {
+        background-color: $light-color;
+
+        &-title {
+            width: fit-content;
+            font-size: 2rem;
+            border-bottom: 1px solid $highlight-color;
+        }
+    }
+
+    .github-repos {
+        background-color: $light-color;
+
+        &-title {
+            width: fit-content;
+            font-size: 2rem;
+            border-bottom: 1px solid $highlight-color;
+        }
+
+        .git-card {
+            margin-bottom: 2rem;
+            // border-radius: $button-radius;
+
+            > div {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+
+            :last-child {
+                margin: 0;
+            }
+
+            .link {
+                color: $primary-color;
+            }
+        }
+
+        .repo-description {
+            color: $light-color-2;
+            font-size: 1rem;
+        }
+
+        .right {
+            text-align: center;
+
+            :last-child {
+                margin: 0;
+            }
+
+            span {
+                width: 100%;
+            }
+        }
+
+        .no-repo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $light-color-2;
+        }
+    }
+}
+
+@media screen and (max-width: $media-mobile-width) {
+    .edit-profile-modal {
+        top: 10px;
+        width: 90% !important;
+    }
+
+    .profile-wrapper {
+        .edit-profile {
+            font-size: 1.2rem;
+        }
+
+        .github-repos {
+            .left {
+                .link {
+                    font-size: 1.1rem;
+                    max-width: 130px;
+                }
+            }
+
+            .repo-description {
+                font-size: 0.8rem;
+            }
+
+            .right {
+                span {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
 }

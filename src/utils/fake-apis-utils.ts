@@ -7,13 +7,19 @@ import fakeUsersData from '../fake-databases/users';
 export const DELAY = 300;
 
 export enum ERROR {
-    CHECK_CREDENTIALS = 'Please check you credentials.',
+    CHECK_CREDENTIALS = 'Please check your credentials.',
+    CHECK_FORM_DATA = 'Please fill asterisk(*) marked fields',
     USER_EXISTS = 'This user is already registered.',
     FEATURE_INCOMING = 'Feature on the way!',
+    PASSWORD_MISMATCH = 'Password mismatch!',
+    INVALID_EMAIL = 'Invalid email!',
+    INVALID_GITHUB = 'Invalid GitHut username!',
 }
 
 export enum SUCCESS {
     JOB_APPLIED = 'Applied!',
+    JOB_CREATED = 'Job created!',
+    PROFILE_SAVED = 'Profile saved!',
 }
 
 export const getLocalStore = () => {
@@ -27,7 +33,7 @@ export const getLocalStore = () => {
     } else {
         localStorage.setItem(LOCAL_STORAGE._USERS, JSON.stringify(usersData));
     }
-    console.log('configured _users store', usersData);
+    // console.log('configured _users store', usersData);
 
     let jobsData: Job[] = fakeJobsData;
 
@@ -39,7 +45,7 @@ export const getLocalStore = () => {
     } else {
         localStorage.setItem(LOCAL_STORAGE._JOBS, JSON.stringify(jobsData));
     }
-    console.log('configured _jobs store', jobsData);
+    // console.log('configured _jobs store', jobsData);
 
     return { usersData, jobsData };
 };

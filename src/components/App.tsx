@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import './App.scss';
+import './App.less';
 import { Outlet, useLocation } from 'react-router-dom';
 
 import Navbar from './navbar';
