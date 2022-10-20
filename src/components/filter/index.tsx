@@ -129,7 +129,7 @@ const Filter: React.FC<FilterProps> = ({ getJobsForUser }) => {
                     </Modal>
                 </div>
             ) : null}
-            <Card className="filter-container">
+            <Card className="filter-container" bordered={false}>
                 <Typography.Paragraph className="filter-title" strong>
                     Filter
                 </Typography.Paragraph>

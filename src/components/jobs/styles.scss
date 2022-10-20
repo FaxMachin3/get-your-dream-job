@@ -52,7 +52,7 @@
                 }
 
                 .tags {
-                    max-width: 500px;
+                    max-width: 400px;
                     > span {
                         padding: 0 0.5rem;
                         margin-right: 0.5rem;
@@ -86,6 +86,12 @@
     .job-listing {
         .job-card {
             .content {
+                flex-direction: column;
+
+                .logo {
+                    margin: 1rem auto;
+                }
+
                 .job-details {
                     .tags {
                         max-width: 400px;
@@ -100,12 +106,6 @@
     .job-listing {
         .job-card {
             .content {
-                flex-direction: column;
-
-                .logo {
-                    margin: 1rem auto;
-                }
-
                 .job-details {
                     margin: 0;
                     .tags {

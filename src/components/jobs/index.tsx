@@ -143,6 +143,7 @@ const Jobs: React.FC<JobsProps> = ({ data }) => {
                                 key={jobId}
                                 hoverable
                                 onClick={openJobModal}
+                                bordered={false}
                             >
                                 <div
                                     className={`content ${

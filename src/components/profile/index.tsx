@@ -165,6 +165,7 @@ const Profile: React.FC<ProfileProps> = ({ applicant }) => {
                         className="git-card"
                         hoverable
                         onClick={() => window.open(repo.html_url)}
+                        bordered={false}
                     >
                         <div className="left">
                             <Typography.Paragraph
@@ -266,7 +267,7 @@ const Profile: React.FC<ProfileProps> = ({ applicant }) => {
 
     return (
         <div className="profile-wrapper">
-            <Card className="profile-details-top profile-card">
+            <Card className="profile-details-top profile-card" bordered={false}>
                 <div>
                     <div className="avatar-container">
                         <Avatar
@@ -330,12 +331,12 @@ const Profile: React.FC<ProfileProps> = ({ applicant }) => {
                 {renderSkills()}
             </Card>
             {!isRecruiter && !applicant ? (
-                <Card className="applied-jobs profile-card">
+                <Card className="applied-jobs profile-card" bordered={false}>
                     {renderJobs()}
                 </Card>
             ) : null}
             {!isRecruiter ? (
-                <Card className="github-repos profile-card">
+                <Card className="github-repos profile-card" bordered={false}>
                     {renderRepos()}
                 </Card>
             ) : null}
